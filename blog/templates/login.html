@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <script src="/static/juery/jQuery%20v3.3.1.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .bac {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            opacity: 1;
+
+        }
+    </style>
+    <title>首页</title>
+</head>
+<body>
+<div class="bac" style="background-image: url('/static/img/641eb21a3a026857e6c8b641d1e55588.jpg') ">
+
+</div>
+{#<div class="container">#}
+{#    <nav class="navbar navbar-default col-md-12 ">#}
+{#        <div class="container-fluid">#}
+{#            <div class="navbar-header col-md-12">#}
+{#                <a href="#" class="col-md-4 col-md-offset-5 " style="color: #00968878;font-size: 20px ">图书管理系统</a>#}
+{#            </div>#}
+{#        </div>#}
+{#    </nav>#}
+{#</div>#}
+<div class="wrap">
+
+</div>
+<div class="container" style="">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form class="form-horizontal has-success col-md-offset-3" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label" style="color:#9e9e9e ">账号</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="请输入账号" name="usm">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label" style="color: #9e9e9e">密码</label>
+            <div class="col-sm-5">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="请输入密码" name="pwd">
+            </div>
+        </div>
+        {#        <div class="form-group">#}
+        {#            <label for="exampleInputFile">File input</label>#}
+        {#            <div class="col-sm-5 col-sm-offset-2">#}
+        {#            <input type="file" id="exampleInputFile" name="file">#}
+        {#                 <p class="help-block">上传头像</p>#}
+        {#            </div>#}
+        {#        </div>#}
+
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label" style="color: #9e9e9e">验证码</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="inputPassword3" placeholder="请输入验证码" name="code">
+                <span class="pull-right" style="margin-top: -32px;"><img onclick="changeImg(this);" src="/code/" alt="" title="点击更换"></span>
+
+
+
+{#            <input type="text" name="code" placeholder="验证" />#}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">登录</button>
+                <a href="{% url 'register' %}" class="btn  btn-default " role="button">注册</a>
+                {#                <button type="submit" class="btn btn-default">注册</button>#}
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+<script>
+    function changeImg(ths) {
+        ths.src = ths.src + '?';
+    }
+</script>
